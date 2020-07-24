@@ -19,6 +19,8 @@ def create_task_view(request):
         description = request.POST.get('description')
         status = request.POST.get('status')
         date = request.POST.get('date')
+        if date == '':
+            date = None
         task = Tasks.objects.create(description=description,
                                     status=status,
                                     task_deadline=date)
