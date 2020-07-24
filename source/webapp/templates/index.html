@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static '/css/style.css'%}">
+    <title>Article</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Задачи:</h1>
+            <div class = "tasks">
+                <h3>Привет</h3>
+                {% for task in tasks %}
+                    <h3>{{ task.pk }}. {{ task.description }}</h3>
+                    <p>Статус: {{ task.get_status_display }}</p>
+                    <p>Дата выполнения: {{ task.task_deadline }}</p>
+                {% endfor %}
+            </div>
+        <p><a href="/tasks/add/">Добавить статью</a></p>
+    </div>
+</body>
+</html>
