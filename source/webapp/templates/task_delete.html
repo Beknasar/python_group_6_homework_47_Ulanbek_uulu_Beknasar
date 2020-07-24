@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{% static "css/style.css" %}">
+<head>
+    <meta charset="UTF-8">
+    <title>View</title>
+</head>
+<body>
+    <div class = "container">
+        <form action="/tasks/delete/" method="post" class="task_view">
+            {% csrf_token %}
+            <h2>Введите номер задачи: </h2>
+            <input type="number" required name="delete"/>
+            <br/>
+            <br/>
+            <input type="submit" value="Send"/>
+        </form>
+         <p><a href="/">Вернуться на главную страницу</a></p>
+        </div>
+    </div>
+</body>
+</html>

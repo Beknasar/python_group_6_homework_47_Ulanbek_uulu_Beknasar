@@ -12,6 +12,8 @@
 <body>
     <div class="container">
         <h1>Задачи:</h1>
+        <p><a href="/tasks/add/">Добавить задачу</a></p>
+        <p><a href="/tasks/delete/">Удалить задачу</a></p>
             <div class = "tasks">
                 {% for task in tasks %}
                     <h3>{{ task.pk }}. {{ task.description }}</h3>
@@ -20,6 +22,7 @@
                 {% endfor %}
             </div>
         <p><a href="/tasks/add/">Добавить задачу</a></p>
+        <p><a href="/tasks/delete/">Удалить задачу</a></p>
     </div>
 </body>
 </html>
