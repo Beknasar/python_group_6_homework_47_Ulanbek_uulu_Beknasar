@@ -1,0 +1,155 @@
+[
+{
+  "model": "webapp.tasks",
+  "pk": 1,
+  "fields": {
+    "description": "Starting job",
+    "status": "in_progress",
+    "task_deadline": "2019-12-19"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 3,
+  "fields": {
+    "description": "Task 1",
+    "status": "new",
+    "task_deadline": "2019-12-20"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 5,
+  "fields": {
+    "description": "Task 3",
+    "status": "new",
+    "task_deadline": "2019-12-20"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 6,
+  "fields": {
+    "description": "Task 4",
+    "status": "done",
+    "task_deadline": "2019-12-21"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 7,
+  "fields": {
+    "description": "Task 5",
+    "status": "new",
+    "task_deadline": "2019-12-21"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 8,
+  "fields": {
+    "description": "Task 6",
+    "status": "in_progress",
+    "task_deadline": "2019-12-22"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 9,
+  "fields": {
+    "description": "Task 7",
+    "status": "new",
+    "task_deadline": "2019-12-23"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 10,
+  "fields": {
+    "description": "Task 8",
+    "status": "done",
+    "task_deadline": "2019-12-24"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 11,
+  "fields": {
+    "description": "Job done",
+    "status": "done",
+    "task_deadline": "2019-12-25"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 12,
+  "fields": {
+    "description": "\u041f\u043e\u0441\u0442\u0440\u043e\u0438\u0442\u044c \u043a\u043e\u0441\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u043a\u043e\u0440\u0430\u0431\u043b\u044c",
+    "status": "in_progress",
+    "task_deadline": "2050-03-05"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 13,
+  "fields": {
+    "description": "\u041f\u043e\u0441\u0442\u0440\u043e\u0438\u0442\u044c \u043a\u043e\u0441\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u043a\u043e\u0440\u0430\u0431\u043b\u044c",
+    "status": "in_progress",
+    "task_deadline": "2050-03-05"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 14,
+  "fields": {
+    "description": "\u041f\u043e\u0441\u0442\u0440\u043e\u0438\u0442\u044c \u043a\u043e\u0441\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u043a\u043e\u0440\u0430\u0431\u043b\u044c",
+    "status": "in_progress",
+    "task_deadline": "2050-03-05"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 15,
+  "fields": {
+    "description": "\u041f\u043e\u0441\u0442\u0440\u043e\u0438\u0442\u044c \u043a\u043e\u0441\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u043a\u043e\u0440\u0430\u0431\u043b\u044c",
+    "status": "in_progress",
+    "task_deadline": "2050-03-05"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 16,
+  "fields": {
+    "description": "\u041f\u043e\u0441\u0442\u0440\u043e\u0438\u0442\u044c \u043a\u043e\u0441\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u043a\u043e\u0440\u0430\u0431\u043b\u044c",
+    "status": "in_progress",
+    "task_deadline": "2050-03-05"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 17,
+  "fields": {
+    "description": "\u041f\u043e\u0441\u0442\u0440\u043e\u0438\u0442\u044c \u043a\u043e\u0441\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u043a\u043e\u0440\u0430\u0431\u043b\u044c",
+    "status": "in_progress",
+    "task_deadline": "2050-03-05"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$HNVWriyChZvH$xAAMpeCawoy8stjnZLpaHSPU2KeZZCUYOJ/JExK6h1A=",
+    "last_login": "2020-07-24T04:23:33Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "\u0411\u0435\u043a\u043d\u0430\u0437\u0430\u0440",
+    "last_name": "\u0423\u043b\u0430\u043d\u0431\u0435\u043a \u0443\u0443\u043b\u0443",
+    "email": "680633@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-07-24T04:23:27Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
