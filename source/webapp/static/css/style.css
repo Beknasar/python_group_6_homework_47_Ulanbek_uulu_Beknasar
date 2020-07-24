@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     font-size: 16px;
     color: #444444;
-    background: aquamarine;
+    background: darkseagreen;
 }
 
 .container {
@@ -16,4 +16,8 @@ body {
 .tasks{
     display: inline-block;
     text-align: left;
+}
+
+.task_view {
+    text-align: center;
 }
