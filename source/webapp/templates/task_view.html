@@ -12,8 +12,9 @@
             <h1>{{ task.title }}</h1>
             <p>Статус: {{ task.status }}</p>
             <p>Дата выполнения:{{task.task_deadline}}</p>
+            <label>Описание:</label>
             <p>{{ task.description }}</p>
-            <p><a href="/">Вернуться на главную страницу</a></p>
+            <p><a href="{% url 'index' %}">Вернуться на главную страницу</a></p>
         </div>
     </div>
 </body>

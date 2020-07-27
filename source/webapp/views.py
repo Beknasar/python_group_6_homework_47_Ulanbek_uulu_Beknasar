@@ -25,11 +25,9 @@ def create_task_view(request):
         date = request.POST.get('date')
         if date == '':
             date = None
-        task = Tasks.objects.create(description=description,
-                                    status=status,
-                                    title=title,
-                                    task_deadline=date)
-        return redirect(f'/tasks/{task.pk}/')
+        task = Tasks.objects.create(description=description, status=status, title=title, task_deadline=date)
+
+        return redirect('task_view', pk=task.pk)
     else:
         return HttpResponseNotAllowed(
             permitted_methods=['GET', 'POST'])
@@ -41,4 +39,4 @@ def delete_view(request):
         task_id = request.POST.get('delete')
         task = Tasks.objects.get(pk=task_id)
         task.delete()
-        return redirect('/')
+        return redirect('index')

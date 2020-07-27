@@ -19,8 +19,8 @@
                     <p>Дата выполнения: {{ task.task_deadline }}</p>
                 {% endfor %}
             </div>
-        <p><a href="/tasks/add/">Добавить задачу</a></p>
-        <p><a href="/tasks/delete/">Удалить задачу</a></p>
+        <p><a href="{% url 'task_create' %}">Добавить задачу</a></p>
+        <p><a href="{% url 'task_delete' %}">Удалить задачу</a></p>
     </div>
 </body>
 </html>

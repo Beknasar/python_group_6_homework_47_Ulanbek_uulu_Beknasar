@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class = "container">
-        <form action="/tasks/delete/" method="post" class="task_view">
+        <form action="{% url 'task_delete' %}" method="post" class="task_view">
             {% csrf_token %}
             <h2>Введите номер задачи: </h2>
             <input type="number" required name="delete"/>
@@ -16,7 +16,7 @@
             <br/>
             <input type="submit" value="Send"/>
         </form>
-         <p><a href="/">Вернуться на главную страницу</a></p>
+         <p><a href="{% url 'index' %}">Вернуться на главную страницу</a></p>
         </div>
     </div>
 </body>
