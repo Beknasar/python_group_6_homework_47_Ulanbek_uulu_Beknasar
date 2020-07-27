@@ -11,17 +11,15 @@
     <h1>Create Task</h1>
     <form action="/tasks/add/" method="post">
         {% csrf_token %}
+        <label>Title:</label><br/>
+        <input type="text" name="title"/><br/>
+        <br/>
 
         <label>Description:</label><br/>
         <textarea name="description"></textarea><br/>
 
         <label for="id-status">Status:</label><br/>
         <select name="status" id="id-status">
-    {#      Вариант №1: обратиться по индексам в каждой паре#}
-    {#        {% for choice in status_choices %}#}
-    {#            <option value="{{ choice.0 }}">{{ choice.1 }}</option>#}
-    {#        {% endfor %}#}
-    {#        Вариант №2: сразу распаковывать#}
              {% for value, label in status_choices %}
                  <option value="{{ value }}">{{ label }}</option>
              {% endfor %}
@@ -29,7 +27,6 @@
 
         <label>Date:</label><br/>
         <input type="text" name="date"/><br/>
-
         <br/>
         <input type="submit" value="Send"/>
     </form>

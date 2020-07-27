@@ -16,6 +16,7 @@ def create_task_view(request):
         })
     elif request.method == 'POST':
         #print(request.POST)
+        title = request.POST.get('title')
         description = request.POST.get('description')
         status = request.POST.get('status')
         date = request.POST.get('date')
@@ -23,6 +24,7 @@ def create_task_view(request):
             date = None
         task = Tasks.objects.create(description=description,
                                     status=status,
+                                    title=title,
                                     task_deadline=date)
         context = {'task': task}
         return render(request, 'task_view.html', context)
