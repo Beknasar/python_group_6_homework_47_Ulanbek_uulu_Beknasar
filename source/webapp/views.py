@@ -1,13 +1,11 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render,redirect, get_object_or_404
 from webapp.models import Tasks, STATUS_CHOICES
 from django.http import HttpResponseNotAllowed
-from django.shortcuts import redirect
+
 
 def index_view(request):
     data = Tasks.objects.all()
-    return render(request, 'index.html', context = {
-        'tasks': data
-    })
+    return render(request, 'index.html', context = {'tasks': data})
 
 def task_view(request, pk):
     task = get_object_or_404(Tasks, pk=pk)
@@ -31,7 +29,6 @@ def create_task_view(request):
                                     status=status,
                                     title=title,
                                     task_deadline=date)
-        context = {'task': task}
         return redirect(f'/tasks/{task.pk}/')
     else:
         return HttpResponseNotAllowed(
