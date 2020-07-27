@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from webapp.models import Tasks, STATUS_CHOICES
 from django.http import HttpResponseNotAllowed
 from django.shortcuts import redirect
@@ -8,6 +8,11 @@ def index_view(request):
     return render(request, 'index.html', context = {
         'tasks': data
     })
+
+def task_view(request, pk):
+    task = get_object_or_404(Tasks, pk=pk)
+    context = {'task': task}
+    return render(request, 'task_view.html', context)
 
 def create_task_view(request):
     if request.method == 'GET':
@@ -27,7 +32,7 @@ def create_task_view(request):
                                     title=title,
                                     task_deadline=date)
         context = {'task': task}
-        return render(request, 'task_view.html', context)
+        return redirect(f'/tasks/{task.pk}/')
     else:
         return HttpResponseNotAllowed(
             permitted_methods=['GET', 'POST'])
