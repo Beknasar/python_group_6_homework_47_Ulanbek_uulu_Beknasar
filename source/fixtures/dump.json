@@ -1,9 +1,74 @@
 [
 {
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "webapp",
+    "model": "tasks"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "848c823e3yd1vk9lrlb4mfxzvpdmhxip",
+  "fields": {
+    "session_data": "NzkyMThmYjdmYTE5ZjI5YTk0M2UyNWM0ODBjMmIyNmU2MGJhNjZiOTp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIyOGE3MGQwMDJhZjc5YWE5NDNiZDdjYzc3MzU4MmE1OGM4MDU2MTgzIn0=",
+    "expire_date": "2020-08-10T13:12:55.862Z"
+  }
+},
+{
   "model": "webapp.tasks",
   "pk": 1,
   "fields": {
-    "description": "Starting job",
+    "title": "Starting job",
+    "description": "Lets do something good!",
     "status": "in_progress",
     "task_deadline": "2019-12-19"
   }
@@ -12,7 +77,8 @@
   "model": "webapp.tasks",
   "pk": 3,
   "fields": {
-    "description": "Task 1",
+    "title": "Task 1",
+    "description": "Desc 1",
     "status": "new",
     "task_deadline": "2019-12-20"
   }
@@ -21,7 +87,8 @@
   "model": "webapp.tasks",
   "pk": 5,
   "fields": {
-    "description": "Task 3",
+    "title": "Task 3",
+    "description": "Desc 3",
     "status": "new",
     "task_deadline": "2019-12-20"
   }
@@ -30,7 +97,8 @@
   "model": "webapp.tasks",
   "pk": 6,
   "fields": {
-    "description": "Task 4",
+    "title": "Task 4",
+    "description": "Desc 4",
     "status": "done",
     "task_deadline": "2019-12-21"
   }
@@ -39,7 +107,8 @@
   "model": "webapp.tasks",
   "pk": 7,
   "fields": {
-    "description": "Task 5",
+    "title": "Task 5",
+    "description": "Desc 5",
     "status": "new",
     "task_deadline": "2019-12-21"
   }
@@ -48,7 +117,8 @@
   "model": "webapp.tasks",
   "pk": 8,
   "fields": {
-    "description": "Task 6",
+    "title": "Task 6",
+    "description": "Desc 6",
     "status": "in_progress",
     "task_deadline": "2019-12-22"
   }
@@ -57,7 +127,8 @@
   "model": "webapp.tasks",
   "pk": 9,
   "fields": {
-    "description": "Task 7",
+    "title": "Task 7",
+    "description": "Desc 7",
     "status": "new",
     "task_deadline": "2019-12-23"
   }
@@ -66,7 +137,8 @@
   "model": "webapp.tasks",
   "pk": 10,
   "fields": {
-    "description": "Task 8",
+    "title": "Task 8",
+    "description": "Desc 8",
     "status": "done",
     "task_deadline": "2019-12-24"
   }
@@ -75,7 +147,8 @@
   "model": "webapp.tasks",
   "pk": 11,
   "fields": {
-    "description": "Job done",
+    "title": "Job done",
+    "description": "Job done, i'm going to sleep.",
     "status": "done",
     "task_deadline": "2019-12-25"
   }
@@ -84,7 +157,8 @@
   "model": "webapp.tasks",
   "pk": 12,
   "fields": {
-    "description": "\u041f\u043e\u0441\u0442\u0440\u043e\u0438\u0442\u044c \u043a\u043e\u0441\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u043a\u043e\u0440\u0430\u0431\u043b\u044c",
+    "title": "\u041f\u043e\u0441\u0442\u0440\u043e\u0438\u0442\u044c \u043a\u043e\u0441\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u043a\u043e\u0440\u0430\u0431\u043b\u044c",
+    "description": "Lorem ipsum dolorem",
     "status": "in_progress",
     "task_deadline": "2050-03-05"
   }
@@ -93,7 +167,8 @@
   "model": "webapp.tasks",
   "pk": 18,
   "fields": {
-    "description": "\u0421\u043e\u0437\u0434\u0430\u0442\u044c \u0443\u0434\u0430\u043b\u0435\u043d\u0438\u0435 \u0437\u0430\u0434\u0430\u0447\u0438",
+    "title": "\u0421\u043e\u0437\u0434\u0430\u0442\u044c \u0443\u0434\u0430\u043b\u0435\u043d\u0438\u0435 \u0437\u0430\u0434\u0430\u0447\u0438",
+    "description": "Need to do",
     "status": "in_progress",
     "task_deadline": "2020-07-24"
   }
@@ -102,9 +177,322 @@
   "model": "webapp.tasks",
   "pk": 30,
   "fields": {
-    "description": "\u0423\u0434\u0430\u043b\u0435\u043d\u0438\u0435 \u0437\u0430\u0434\u0430\u0447\u0438",
+    "title": "\u0423\u0434\u0430\u043b\u0435\u043d\u0438\u0435 \u0437\u0430\u0434\u0430\u0447\u0438",
+    "description": "Final",
     "status": "done",
     "task_deadline": "2020-07-24"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 31,
+  "fields": {
+    "title": "Task for simple",
+    "description": ";asdf;kdsa;lfjasdlkfa\r\ndksafldjlkgfsdl'fgkdaf",
+    "status": "done",
+    "task_deadline": "2020-07-24"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 33,
+  "fields": {
+    "title": "sadfgasdfgc",
+    "description": "sadfghgreasdfghfeasdfgewsdfgewadfcb",
+    "status": "new",
+    "task_deadline": null
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 36,
+  "fields": {
+    "title": "asdfaddf",
+    "description": "asdfeASA",
+    "status": "new",
+    "task_deadline": null
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 37,
+  "fields": {
+    "title": "asdfaddf",
+    "description": "asdfeASA",
+    "status": "new",
+    "task_deadline": null
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 40,
+  "fields": {
+    "title": "Normal task",
+    "description": "Just normal task",
+    "status": "in_progress",
+    "task_deadline": "2020-11-13"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 41,
+  "fields": {
+    "title": "\u041d\u0410\u041a\u041e\u041d\u0415\u0426 \u0417\u0410\u041a\u041e\u041d\u0427\u0418\u041b",
+    "description": "\u041f\u043e\u0439\u0434\u0443 \u043e\u0442\u0434\u044b\u0437\u0445\u0430\u0442\u044c",
+    "status": "in_progress",
+    "task_deadline": "2020-07-28"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add tasks",
+    "content_type": 7,
+    "codename": "add_tasks"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change tasks",
+    "content_type": 7,
+    "codename": "change_tasks"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete tasks",
+    "content_type": 7,
+    "codename": "delete_tasks"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view tasks",
+    "content_type": 7,
+    "codename": "view_tasks"
   }
 },
 {
@@ -112,7 +500,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$150000$HNVWriyChZvH$xAAMpeCawoy8stjnZLpaHSPU2KeZZCUYOJ/JExK6h1A=",
-    "last_login": "2020-07-24T04:23:33Z",
+    "last_login": "2020-07-27T13:12:55.813Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "\u0411\u0435\u043a\u043d\u0430\u0437\u0430\u0440",
