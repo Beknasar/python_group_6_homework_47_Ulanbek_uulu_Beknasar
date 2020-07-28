@@ -4,9 +4,20 @@
 <h1>Задачи:</h1>
     <div class = "tasks">
         {% for task in tasks %}
-            <h3><a href="/tasks/{{ task.pk }}">{{ task.pk }}. {{ task.title }}</a></h3>
-            <p>Статус: {{ task.get_status_display }}</p>
-            <p>Дата выполнения: {{ task.task_deadline }}</p>
+            <div class="card">
+                <div class="card-content">
+                <h3><a href="/tasks/{{ task.pk }}" class="card-button">{{ task.pk }}. {{ task.title }}</a></h3>
+                <p>Статус: {{ task.get_status_display }}</p>
+                <p>Дата выполнения: {{ task.task_deadline }}</p>
+            </div>
+		</div>
         {% endfor %}
     </div>
+{% endblock %}
+{% block footer %}
+ <div class="container-foot">
+			<footer class="footer">
+			<p>©TASK_SITE</p>
+			</footer>
+ </div>
 {% endblock %}
