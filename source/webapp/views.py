@@ -40,12 +40,23 @@ def update_view(request, pk):
             'task': task
         })
     elif request.method == "POST":
+        errors = {}
         task.title = request.POST.get('title')
+        if not task.title:
+            errors['title'] = 'This field is required!'
         task.description = request.POST.get('description')
+        if not task.description:
+            errors['description'] = 'This field is required!'
         task.status = request.POST.get('status')
         task.date = request.POST.get('date')
-        task.save()
 
+        if errors:
+            return render(request, 'task_update.html', context={
+                'status_choices': STATUS_CHOICES,
+                'task': task,
+                'errors': errors
+            })
+        task.save()
         return redirect('task_view', pk=task.pk)
     else:
         return HttpResponseNotAllowed(permitted_methods=['GET', 'POST'])
