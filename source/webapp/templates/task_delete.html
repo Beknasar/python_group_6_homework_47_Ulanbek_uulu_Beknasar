@@ -2,13 +2,18 @@
 
 {% block title %}Delete{% endblock %}
 
+{% block menu %}
+    <li><a href="{% url 'task_view' task.pk %}">Отмена</a></li>
+{% endblock %}
+
 {% block content %}
-        <form action="{% url 'task_delete' %}" method="post" class="task_view">
-            {% csrf_token %}
-            <h2>Введите номер задачи: </h2>
-            <input type="number" required name="delete"/>
-            <br/>
-            <br/>
-            <input type="submit" value="Send"/>
-        </form>
+    <h1>Вы уверены, что хотите удалить задачу "{{ task.title }}"?</h1>
+    <p>By: {{ task.author }} | {{ task.task_deadline }}</p>
+    <form action="{% url "task_delete" task.pk %}" method="post">
+        {% csrf_token %}
+        <p><input type="submit" value="Да"></p>
+        <p><a href="{% url 'task_view' task.pk %}">Отмена</a></p>
+    </form>
+    <h3>Содержимое статьи: </h3>
+    <p>{{ task.description }}</p>
 {% endblock %}

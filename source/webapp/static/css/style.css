@@ -115,3 +115,7 @@ body {
     background: darkslategrey;
     color: white;
 }
+
+.pre {
+    white-space: pre;
+}

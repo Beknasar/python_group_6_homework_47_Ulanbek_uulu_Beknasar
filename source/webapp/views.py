@@ -5,7 +5,7 @@ from django.http import HttpResponseNotAllowed
 
 def index_view(request):
     data = Tasks.objects.all()
-    return render(request, 'index.html', context = {'tasks': data})
+    return render(request, 'index.html', context={'tasks': data})
 
 def task_view(request, pk):
     task = get_object_or_404(Tasks, pk=pk)
@@ -32,11 +32,10 @@ def create_task_view(request):
         return HttpResponseNotAllowed(
             permitted_methods=['GET', 'POST'])
 
-def delete_view(request):
+def delete_view(request, pk):
+    task = get_object_or_404(Tasks, pk=pk)
     if request.method == 'GET':
-        return render(request, 'task_delete.html')
+        return render(request, 'task_delete.html', context={'task': task})
     elif request.method == 'POST':
-        task_id = request.POST.get('delete')
-        task = Tasks.objects.get(pk=task_id)
         task.delete()
         return redirect('index')
