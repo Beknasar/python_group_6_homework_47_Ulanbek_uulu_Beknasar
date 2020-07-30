@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect, get_object_or_404
 from webapp.models import Tasks, STATUS_CHOICES
 from django.http import HttpResponseNotAllowed
-
+from .forms import TaskForm
 
 def index_view(request):
     data = Tasks.objects.all()
@@ -14,18 +14,24 @@ def task_view(request, pk):
 
 def create_task_view(request):
     if request.method == 'GET':
+        form = TaskForm()
         return render(request, 'task_create.html', context={
-            'status_choices': STATUS_CHOICES
+            'form': form
         })
     elif request.method == 'POST':
         #print(request.POST)
-        title = request.POST.get('title')
-        description = request.POST.get('description')
-        status = request.POST.get('status')
-        date = request.POST.get('date')
-        if date == '':
-            date = None
-        task = Tasks.objects.create(description=description, status=status, title=title, task_deadline=date)
+        form = TaskForm(data=request.POST)
+        # date = request.POST.get('date')
+        # if date == '':
+        #     date = None
+        if form.is_valid():
+            task = Tasks.objects.create(
+                title=form.cleaned_data['title'],
+            description = form.cleaned_data['description'],
+            status = form.cleaned_data['status'],
+            date = form.cleaned_data['date']
+            )
+
 
         return redirect('task_view', pk=task.pk)
     else:
