@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Update{% endblock %}
+
+{% block menu %}
+    <li><a href="{% url 'task_view' task.pk %}">Cancel</a></li>
+{% endblock %}
+
+{% block content %}
+    <h1>Update Task</h1>
+
+    <form action="{% url "task_update" task.pk %}" method="post">
+        {% csrf_token %}
+        <label>Title:</label><br/>
+        <input type="text" name="title"/><br/>
+        <br/>
+
+        <label>Description:</label><br/>
+        <textarea name="description"></textarea><br/>
+
+        <label for="id-status">Status:</label><br/>
+        <select name="status" id="id-status">
+             {% for value, label in status_choices %}
+                 <option value="{{ value }}">{{ label }}</option>
+             {% endfor %}
+        </select><br/>
+
+        <label>Date:</label><br/>
+        <input type="text" name="date"/><br/>
+        <br/>
+        <input type="submit" value="Send"/>
+    </form>
+{% endblock %}

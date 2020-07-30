@@ -32,6 +32,24 @@ def create_task_view(request):
         return HttpResponseNotAllowed(
             permitted_methods=['GET', 'POST'])
 
+def update_view(request, pk):
+    task = get_object_or_404(Tasks, pk=pk)
+    if request.method == "GET":
+        return render(request, 'task_update.html', context={
+            'status_choices': STATUS_CHOICES,
+            'task': task
+        })
+    elif request.method == "POST":
+        task.title = request.POST.get('title')
+        task.description = request.POST.get('description')
+        task.status = request.POST.get('status')
+        task.date = request.POST.get('date')
+        task.save()
+
+        return redirect('task_view', pk=task.pk)
+    else:
+        return HttpResponseNotAllowed(permitted_methods=['GET', 'POST'])
+
 def delete_view(request, pk):
     task = get_object_or_404(Tasks, pk=pk)
     if request.method == 'GET':
