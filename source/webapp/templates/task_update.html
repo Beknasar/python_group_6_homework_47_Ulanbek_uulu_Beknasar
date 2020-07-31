@@ -11,28 +11,9 @@
 
     <form action="{% url "task_update" task.pk %}" method="post">
         {% csrf_token %}
-        <label>Title:</label><br/>
-        <input type="text" name="title" value="{{ task.title }}" required/><br/>
-        {% if errors.title %}<p class="error">{{ errors.title }}</p> {% endif %}
-        <br/>
-
-        <label>Description:</label><br/>
-        <textarea name="description" required>{{ task.description }}</textarea><br/>
-        {% if errors.description %}<p class="errors">{{ errors.description }}</p>{% endif %}
-
-        <label for="id-status">Status:</label><br/>
-        <select name="status" id="id-status">
-             {% for value, label in status_choices %}
-                <option value="{{ value }}"
-                        {% if value == task.status %}selected{% endif %}>
-                    {{ label }}
-                </option>
-            {% endfor %}
-        </select><br/>
-
-        <label>Date:</label><br/>
-        <input type="text" name="date" value="{{ task.task_deadline }}"/><br/>
-        <br/>
+        {% for field in form %}
+            {% include 'partial/form_field.html' %}
+        {% endfor %}
         <input type="submit" value="Send"/>
     </form>
 {% endblock %}

@@ -27,11 +27,9 @@ def create_task_view(request):
         if form.is_valid():
             task = Tasks.objects.create(
                 title=form.cleaned_data['title'],
-            description = form.cleaned_data['description'],
-            status = form.cleaned_data['status'],
-            date = form.cleaned_data['date']
-            )
-
+                description = form.cleaned_data['description'],
+                status = form.cleaned_data['status'],
+                date = form.cleaned_data['date'])
 
         return redirect('task_view', pk=task.pk)
     else:
@@ -41,29 +39,31 @@ def create_task_view(request):
 def update_view(request, pk):
     task = get_object_or_404(Tasks, pk=pk)
     if request.method == "GET":
+        form = TaskForm(initial={
+            'title': task.title,
+            'description': task.description,
+            'task_deadline': task.task_deadline,
+            'status': task.status
+        })
         return render(request, 'task_update.html', context={
-            'status_choices': STATUS_CHOICES,
+            'form': form,
             'task': task
         })
     elif request.method == "POST":
-        errors = {}
-        task.title = request.POST.get('title')
-        if not task.title:
-            errors['title'] = 'This field is required!'
-        task.description = request.POST.get('description')
-        if not task.description:
-            errors['description'] = 'This field is required!'
-        task.status = request.POST.get('status')
-        task.date = request.POST.get('date')
-
-        if errors:
+       form = TaskForm(data=request.POST)
+       if form.is_valid():
+            task.title = form.cleaned_data['title']
+            task.description = form.cleaned_data['description']
+            task.status = form.cleaned_data['status']
+            task.task_deadline = form.cleaned_data['task_deadline']
+            task.save()
+            return redirect('task_view', pk=task.pk)
+       else:
             return render(request, 'task_update.html', context={
-                'status_choices': STATUS_CHOICES,
                 'task': task,
-                'errors': errors
+                'form': form
             })
-        task.save()
-        return redirect('task_view', pk=task.pk)
+
     else:
         return HttpResponseNotAllowed(permitted_methods=['GET', 'POST'])
 
