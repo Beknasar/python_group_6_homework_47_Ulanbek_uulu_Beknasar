@@ -4,13 +4,11 @@
 
 {% block content %}
 <h1>Create Task</h1>
-    <form action="{% url 'task_create' %}" method="post">
-        {% csrf_token %}
 
-         {% include 'partial/form_field.html' with field=form.title %}
-         {% include 'partial/form_field.html' with field=form.description %}
-         {% include 'partial/form_field.html' with field=form.date %}
-         {% include 'partial/form_field.html' with field=form.status %}
-        <input type="submit" value="Send"/>
-    </form>
+        {% url 'task_create' as action_url %}
+        {% include 'partial/form.html' with action_url=action_url form_method='post' %}
+{#         {% include 'partial/form_field.html' with field=form.title %}#}
+{#         {% include 'partial/form_field.html' with field=form.description %}#}
+{#         {% include 'partial/form_field.html' with field=form.date %}#}
+{#         {% include 'partial/form_field.html' with field=form.status %}#}
 {% endblock %}

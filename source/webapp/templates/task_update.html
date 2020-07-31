@@ -8,12 +8,9 @@
 
 {% block content %}
     <h1>Update Task</h1>
-
-    <form action="{% url "task_update" task.pk %}" method="post">
-        {% csrf_token %}
-        {% for field in form %}
-            {% include 'partial/form_field.html' %}
-        {% endfor %}
-        <input type="submit" value="Send"/>
-    </form>
+{#        {% for field in form %}#}
+{#            {% include 'partial/form_field.html' %}#}
+{#        {% endfor %}#}
+        {% url 'task_update' pk=task.pk as action_url %}
+        {% include 'partial/form.html' with action_url=action_url form_method='post' %}
 {% endblock %}

@@ -64,6 +64,14 @@
   }
 },
 {
+  "model": "sessions.session",
+  "pk": "z3aq30k9erh4wegzzlwhvr4iufuos27o",
+  "fields": {
+    "session_data": "NzkyMThmYjdmYTE5ZjI5YTk0M2UyNWM0ODBjMmIyNmU2MGJhNjZiOTp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIyOGE3MGQwMDJhZjc5YWE5NDNiZDdjYzc3MzU4MmE1OGM4MDU2MTgzIn0=",
+    "expire_date": "2020-08-14T02:11:06.146Z"
+  }
+},
+{
   "model": "webapp.tasks",
   "pk": 1,
   "fields": {
@@ -88,9 +96,9 @@
   "pk": 5,
   "fields": {
     "title": "Task 3",
-    "description": "Desc 3",
-    "status": "new",
-    "task_deadline": "2019-12-20"
+    "description": "Desc 3\r\nDESC 3\r\nDDLC 2",
+    "status": "done",
+    "task_deadline": "2020-07-30"
   }
 },
 {
@@ -111,16 +119,6 @@
     "description": "Desc 5",
     "status": "new",
     "task_deadline": "2019-12-21"
-  }
-},
-{
-  "model": "webapp.tasks",
-  "pk": 8,
-  "fields": {
-    "title": "Task 6",
-    "description": "Desc 6",
-    "status": "in_progress",
-    "task_deadline": "2019-12-22"
   }
 },
 {
@@ -168,9 +166,9 @@
   "pk": 18,
   "fields": {
     "title": "\u0421\u043e\u0437\u0434\u0430\u0442\u044c \u0443\u0434\u0430\u043b\u0435\u043d\u0438\u0435 \u0437\u0430\u0434\u0430\u0447\u0438",
-    "description": "Need to do",
-    "status": "in_progress",
-    "task_deadline": "2020-07-24"
+    "description": "Need to do\r\nAlready did it!",
+    "status": "done",
+    "task_deadline": "2020-07-31"
   }
 },
 {
@@ -195,31 +193,11 @@
 },
 {
   "model": "webapp.tasks",
-  "pk": 33,
-  "fields": {
-    "title": "sadfgasdfgc",
-    "description": "sadfghgreasdfghfeasdfgewsdfgewadfcb",
-    "status": "new",
-    "task_deadline": null
-  }
-},
-{
-  "model": "webapp.tasks",
-  "pk": 36,
-  "fields": {
-    "title": "asdfaddf",
-    "description": "asdfeASA",
-    "status": "new",
-    "task_deadline": null
-  }
-},
-{
-  "model": "webapp.tasks",
   "pk": 37,
   "fields": {
-    "title": "asdfaddf",
-    "description": "asdfeASA",
-    "status": "new",
+    "title": "\u0422\u0435\u0441\u0442 \u043e\u0431\u043d\u043e\u0432\u044b \u21162",
+    "description": "\u0422\u0435\u0441\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u0440\u0430\u0431\u043e\u0442\u044b \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u044f \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b\r\n\u0418 \u043f\u0435\u0440\u0435\u043d\u043e\u0441\u0430 \u0441\u0442\u0440\u043e\u043a",
+    "status": "done",
     "task_deadline": null
   }
 },
@@ -241,6 +219,16 @@
     "description": "\u041f\u043e\u0439\u0434\u0443 \u043e\u0442\u0434\u044b\u0437\u0445\u0430\u0442\u044c",
     "status": "in_progress",
     "task_deadline": "2020-07-28"
+  }
+},
+{
+  "model": "webapp.tasks",
+  "pk": 42,
+  "fields": {
+    "title": "\u0421\u043f\u0430\u0430\u0442\u0442\u044c",
+    "description": "Need some sleep...or cup of coffee.",
+    "status": "done",
+    "task_deadline": "2020-07-31"
   }
 },
 {
@@ -500,7 +488,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$150000$HNVWriyChZvH$xAAMpeCawoy8stjnZLpaHSPU2KeZZCUYOJ/JExK6h1A=",
-    "last_login": "2020-07-27T13:12:55.813Z",
+    "last_login": "2020-07-31T02:11:06.097Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "\u0411\u0435\u043a\u043d\u0430\u0437\u0430\u0440",

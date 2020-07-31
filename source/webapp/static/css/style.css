@@ -116,6 +116,36 @@ body {
     color: white;
 }
 
+.button {
+    width:  298px;
+	height: 50px;
+
+	color: white;
+	font-size: 14px;
+	text-decoration: none;
+	text-transform: uppercase;
+	display: inline-block;
+	border-radius: 5px;
+    border: #7e8287 solid 1px;
+	line-height: 50px;
+}
+.accept {
+    background: darkcyan;
+}
+.cancel {
+    background: #7e8287;
+    color: white;
+}
+.button:hover {
+    background: darkslategrey;
+    color: white;
+}
+.chekbox{
+    text-align: left;
+}
+.cancel:hover {
+    background: darkgray;
+}
 .pre {
     white-space: pre;
 }

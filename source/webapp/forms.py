@@ -8,7 +8,7 @@ class TaskForm(forms.Form):
     description = forms.CharField(max_length=500, required=True, label='Описание', widget=forms.Textarea)
     status = forms.ChoiceField(choices=STATUS_CHOICES, required=True, label='Статус',
                                initial=default_status)
-    date = forms.DateTimeField(required=False, label='Дата выполнения', widget=forms.DateInput(attrs={'type': 'date'}))
+    task_deadline = forms.DateTimeField(required=False, label='Дата выполнения', widget=forms.DateInput(attrs={'type': 'date'}))
 
     def __str__(self):
         return "{}. {}".format(self.pk, self.title)

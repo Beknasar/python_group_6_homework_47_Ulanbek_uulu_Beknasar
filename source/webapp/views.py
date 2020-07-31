@@ -29,7 +29,7 @@ def create_task_view(request):
                 title=form.cleaned_data['title'],
                 description = form.cleaned_data['description'],
                 status = form.cleaned_data['status'],
-                date = form.cleaned_data['date'])
+                task_deadline = form.cleaned_data['task_deadline'])
 
         return redirect('task_view', pk=task.pk)
     else:
